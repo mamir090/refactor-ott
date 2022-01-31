@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "projects": {
+    "aptn": "apps/aptn",
+    "aptn-e2e": "apps/aptn-e2e"
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "projectType": "application",
+  "root": "apps/aptn",
+  "sourceRoot": "apps/aptn/src",
+  "prefix": "refactor-ott",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/aptn",
+        "index": "apps/aptn/src/index.html",
+        "main": "apps/aptn/src/main.ts",
+        "polyfills": "apps/aptn/src/polyfills.ts",
+        "tsConfig": "apps/aptn/tsconfig.app.json",
+        "inlineStyleLanguage": "scss",
+        "assets": ["apps/aptn/src/favicon.ico", "apps/aptn/src/assets"],
+        "styles": ["apps/aptn/src/styles.scss"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/aptn/src/environments/environment.ts",
+              "with": "apps/aptn/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "aptn:build:production"
+        },
+        "development": {
+          "browserTarget": "aptn:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "aptn:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["apps/aptn/src/**/*.ts", "apps/aptn/src/**/*.html"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/aptn"],
+      "options": {
+        "jestConfig": "apps/aptn/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

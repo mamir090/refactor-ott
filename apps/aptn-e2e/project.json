@@ -1,0 +1,28 @@
+{
+  "root": "apps/aptn-e2e",
+  "sourceRoot": "apps/aptn-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/aptn-e2e/cypress.json",
+        "devServerTarget": "aptn:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "aptn:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/aptn-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["aptn"]
+}
