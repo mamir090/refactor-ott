@@ -2,6 +2,9 @@
   "version": 2,
   "projects": {
     "aptn": "apps/aptn",
-    "aptn-e2e": "apps/aptn-e2e"
+    "aptn-e2e": "apps/aptn-e2e",
+    "env": "libs/env",
+    "loader": "libs/loader",
+    "screens-login-login-alpha": "libs/screens/login/login-alpha"
   }
 }

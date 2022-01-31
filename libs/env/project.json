@@ -1,0 +1,39 @@
+{
+  "projectType": "library",
+  "root": "libs/env",
+  "sourceRoot": "libs/env/src",
+  "prefix": "refactor-ott",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/env"],
+      "options": {
+        "project": "libs/env/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/env/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/env/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/env"],
+      "options": {
+        "jestConfig": "libs/env/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": ["libs/env/src/**/*.ts", "libs/env/src/**/*.html"]
+      }
+    }
+  },
+  "tags": []
+}

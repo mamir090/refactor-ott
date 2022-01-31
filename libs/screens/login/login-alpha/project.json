@@ -1,0 +1,43 @@
+{
+  "projectType": "library",
+  "root": "libs/screens/login/login-alpha",
+  "sourceRoot": "libs/screens/login/login-alpha/src",
+  "prefix": "refactor-ott",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/screens/login/login-alpha"],
+      "options": {
+        "project": "libs/screens/login/login-alpha/ng-package.json",
+        "tailwindConfig": "libs/screens/login/login-alpha/tailwind.config.js"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/screens/login/login-alpha/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/screens/login/login-alpha/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/screens/login/login-alpha"],
+      "options": {
+        "jestConfig": "libs/screens/login/login-alpha/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/screens/login/login-alpha/src/**/*.ts",
+          "libs/screens/login/login-alpha/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

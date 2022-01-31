@@ -14,7 +14,14 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@refactor-ott/env": ["libs/env/src/index.ts"],
+      "@refactor-ott/environment": ["libs/environment/src/index.ts"],
+      "@refactor-ott/loader": ["libs/loader/src/index.ts"],
+      "@refactor-ott/screens/login/login-alpha": [
+        "libs/screens/login/login-alpha/src/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
