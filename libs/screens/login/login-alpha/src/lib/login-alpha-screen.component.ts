@@ -1,6 +1,25 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  NgModule,
+  ModuleWithProviders,
+  createNgModuleRef,
+  Injector,
+  NgModuleRef, Injectable
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {RouterModule} from "@angular/router";
+import {LazyLoadedModule, LoginConfig} from '@refactor-ott/env'
+
+
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoginAlphaConfig extends LoginConfig {
+  backgroundColor: string = "red"
+}
+
 
 @Component({
   selector: 'refactor-ott-login-alpha-screen',
@@ -8,9 +27,11 @@ import {RouterModule} from "@angular/router";
   styleUrls: ['./login-alpha-screen.component.scss'],
 })
 export class LoginAlphaScreenComponent implements OnInit {
-  constructor() {}
+  // constructor(public config:LoginAlphaConfig ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    // console.warn(this.config)
+  }
 }
 
 @NgModule({
@@ -22,7 +43,16 @@ export class LoginAlphaScreenComponent implements OnInit {
     }])
   ],
   declarations: [LoginAlphaScreenComponent],
+  providers: [{
+    provide:LoginAlphaConfig,
+    useExisting: LoginConfig
+  }],
   exports: [LoginAlphaScreenComponent],
-  bootstrap: [LoginAlphaScreenComponent]
 })
-export class LoginAlphaScreenComponentModule {}
+export class LoginAlphaScreenComponentModule {
+
+}
+
+export const LoginAlphaLoader: LazyLoadedModule = {
+  module: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule),
+}

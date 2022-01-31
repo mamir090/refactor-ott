@@ -1,9 +1,9 @@
-import { NgModule } from '@angular/core';
+import {Injectable, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { LoaderModule} from "@refactor-ott/loader";
-import {RoutesGenerator} from "@refactor-ott/env";
+import {LoginConfig, RoutesGenerator} from "@refactor-ott/env";
 
 
 
@@ -12,11 +12,16 @@ import {RoutesGenerator} from "@refactor-ott/env";
   imports: [
     BrowserModule,
     RoutesGenerator.generateRouterModule({
-      login: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule)
+      login: {module: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule)}
     }),
     LoaderModule
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: LoginConfig,
+    //   useClass: CaracolLoginConfig
+    // }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

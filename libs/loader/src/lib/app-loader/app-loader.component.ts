@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginConfig} from "@refactor-ott/env";
 
 @Component({
   selector: 'refactor-ott-app-loader',

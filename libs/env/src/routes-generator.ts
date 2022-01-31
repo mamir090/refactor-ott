@@ -1,6 +1,10 @@
 import {Route, RouterModule, Routes} from "@angular/router";
 import {ModuleWithProviders, Type} from "@angular/core";
 
+export class LoginConfig {
+  facebook: boolean = false
+}
+
 
 export class RoutesGenerator {
   private static _appRoutes: Routes
@@ -16,7 +20,7 @@ export class RoutesGenerator {
     this._appRoutes = Object.entries(mergedSchema).map(([key, value]) => {
       return {
         path: key,
-        loadChildren: () => value
+        loadChildren: () => value.module,
       }
     })
   }
@@ -29,14 +33,17 @@ export class RoutesGenerator {
 
 
 const routingSchema: RoutingSchema = {
-  login: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule)
+  login: {
+    module: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule),
+  }
 }
 
 export interface RoutingSchema {
-  login: LazyLoadedModule,
+  login: LazyLoadedModule<LoginConfig>,
 }
 
-export type LazyLoadedModule = Type<any> | Promise<Type<any> | any>
+export type LazyLoadedModule<T = any> = {module:  Type<any> | Promise<Type<any> | any>, theConfig?: T}
+
 
 
 

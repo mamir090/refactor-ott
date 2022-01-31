@@ -1,1 +1,1 @@
-export * from './RoutesGenerator'
+export * from './routes-generator'

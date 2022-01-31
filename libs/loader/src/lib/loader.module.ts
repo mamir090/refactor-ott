@@ -20,6 +20,15 @@ import {RoutesGenerator, RoutingSchema} from "@refactor-ott/env";
   ]
 })
 export class LoaderModule {
+  static forRoot(): ModuleWithProviders<LoaderModule> {
+
+    return {
+      ngModule: LoaderModule,
+      providers: [
+
+      ],
+    };
+  }
 }
 
 
