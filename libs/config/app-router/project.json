@@ -1,0 +1,42 @@
+{
+  "projectType": "library",
+  "root": "libs/config/app-router",
+  "sourceRoot": "libs/config/app-router/src",
+  "prefix": "refactor-ott",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/angular:ng-packagr-lite",
+      "outputs": ["dist/libs/config/app-router"],
+      "options": {
+        "project": "libs/config/app-router/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/config/app-router/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/config/app-router/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/config/app-router"],
+      "options": {
+        "jestConfig": "libs/config/app-router/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/config/app-router/src/**/*.ts",
+          "libs/config/app-router/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

@@ -5,17 +5,13 @@ import {
   ModuleWithProviders,
   createNgModuleRef,
   Injector,
-  NgModuleRef, Injectable
+  NgModuleRef, Injectable, Type
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {CommonModule} from '@angular/common';
 import {RouterModule} from "@angular/router";
-import {LazyLoadedModule, LoginConfig} from '@refactor-ott/env'
+import {LazyLoadedModule, LazyLoadedModuleWithConfig, LoginConfig} from '@refactor-ott/env'
 
 
-
-@Injectable({
-  providedIn: 'root'
-})
 export class LoginAlphaConfig extends LoginConfig {
   backgroundColor: string = "red"
 }
@@ -27,10 +23,11 @@ export class LoginAlphaConfig extends LoginConfig {
   styleUrls: ['./login-alpha-screen.component.scss'],
 })
 export class LoginAlphaScreenComponent implements OnInit {
-  // constructor(public config:LoginAlphaConfig ) {}
+  constructor(public config: LoginAlphaConfig) {
+  }
 
   ngOnInit(): void {
-    // console.warn(this.config)
+    console.warn(this.config)
   }
 }
 
@@ -44,15 +41,15 @@ export class LoginAlphaScreenComponent implements OnInit {
   ],
   declarations: [LoginAlphaScreenComponent],
   providers: [{
-    provide:LoginAlphaConfig,
-    useExisting: LoginConfig
+    provide: LoginAlphaConfig,
+    useFactory: () => LoginAlphaScreenComponentModule.config,
+    // useValue: LoginAlphaScreenComponentModule.config,
   }],
   exports: [LoginAlphaScreenComponent],
 })
-export class LoginAlphaScreenComponentModule {
 
+export class LoginAlphaScreenComponentModule extends LazyLoadedModuleWithConfig{
+  static withConfig = LoginAlphaScreenComponentModule.factory<LoginAlphaConfig>()
 }
 
-export const LoginAlphaLoader: LazyLoadedModule = {
-  module: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule),
-}
+
