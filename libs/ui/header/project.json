@@ -1,31 +1,30 @@
 {
   "projectType": "library",
-  "root": "libs/loader",
-  "sourceRoot": "libs/loader/src",
+  "root": "libs/ui/header",
+  "sourceRoot": "libs/ui/header/src",
   "prefix": "refactor-ott",
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
-      "outputs": ["dist/libs/loader"],
+      "outputs": ["dist/libs/ui/header"],
       "options": {
-        "project": "libs/loader/ng-package.json",
-        "tailwindConfig": "libs/loader/tailwind.config.js"
+        "project": "libs/ui/header/ng-package.json"
       },
       "configurations": {
         "production": {
-          "tsConfig": "libs/loader/tsconfig.lib.prod.json"
+          "tsConfig": "libs/ui/header/tsconfig.lib.prod.json"
         },
         "development": {
-          "tsConfig": "libs/loader/tsconfig.lib.json"
+          "tsConfig": "libs/ui/header/tsconfig.lib.json"
         }
       },
       "defaultConfiguration": "production"
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/loader"],
+      "outputs": ["coverage/libs/ui/header"],
       "options": {
-        "jestConfig": "libs/loader/jest.config.js",
+        "jestConfig": "libs/ui/header/jest.config.js",
         "passWithNoTests": true
       }
     },
@@ -33,8 +32,8 @@
       "executor": "@nrwl/linter:eslint",
       "options": {
         "lintFilePatterns": [
-          "libs/loader/src/**/*.ts",
-          "libs/loader/src/**/*.html"
+          "libs/ui/header/src/**/*.ts",
+          "libs/ui/header/src/**/*.html"
         ]
       }
     }

@@ -1,9 +1,5 @@
-import {Route, RouterModule, Routes} from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {ModuleWithProviders, Type} from "@angular/core";
-
-export class LoginConfig {
-  facebook: boolean = false
-}
 
 
 export class RoutesGenerator {
@@ -26,23 +22,22 @@ export class RoutesGenerator {
   }
 
   private static get appRoutes(): Routes {
-    console.warn("getAppRoutes", this._appRoutes)
     return this._appRoutes;
   }
 }
 
 
 const routingSchema: RoutingSchema = {
-  login: {
-    module: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule),
-  }
+  // login: {
+  //   module: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule),
+  // }
 }
 
 export interface RoutingSchema {
-  login: LazyLoadedModule<LoginConfig>,
+  login?: LazyLoadedModule,
 }
 
-export type LazyLoadedModule<T = any> = {module:  Type<any> | Promise<Type<any> | any>, theConfig?: T}
+export type LazyLoadedModule = {module:  Type<unknown> | Promise<Type<unknown> | unknown>}
 
 
 

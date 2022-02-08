@@ -1,10 +1,9 @@
-import {Injectable, NgModule} from '@angular/core';
+import {NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { LoaderModule} from "@refactor-ott/loader";
-import { RoutesGenerator} from "@refactor-ott/env";
-
+import {ShellModule} from "@refactor-ott/shell";
+import {RoutesGenerator} from "@refactor-ott/config/app-router";
 
 
 @NgModule({
@@ -13,9 +12,9 @@ import { RoutesGenerator} from "@refactor-ott/env";
     BrowserModule,
     RoutesGenerator.generateRouterModule({
       login: {module: import("@refactor-ott/screens/login/login-alpha")
-          .then(m => m.LoginAlphaScreenComponentModule.withConfig({backgroundColor: 'blue', facebook: false}))}
+          .then(m => m.LoginAlphaScreenComponentModule.withConfig({backgroundColor: 'blue'}))}
     }),
-    LoaderModule
+    ShellModule,
   ],
   bootstrap: [AppComponent],
 })

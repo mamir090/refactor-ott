@@ -2,19 +2,13 @@ import {
   Component,
   OnInit,
   NgModule,
-  ModuleWithProviders,
-  createNgModuleRef,
-  Injector,
-  NgModuleRef, Injectable, Type
 } from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {RouterModule} from "@angular/router";
-import {LazyLoadedModule, LazyLoadedModuleWithConfig, LoginConfig} from '@refactor-ott/env'
+import {LoginAlphaConfig} from "./config";
+import {ModuleWithConfig} from "@refactor-ott/config/app-router";
 
 
-export class LoginAlphaConfig extends LoginConfig {
-  backgroundColor: string = "red"
-}
 
 
 @Component({
@@ -48,7 +42,7 @@ export class LoginAlphaScreenComponent implements OnInit {
   exports: [LoginAlphaScreenComponent],
 })
 
-export class LoginAlphaScreenComponentModule extends LazyLoadedModuleWithConfig{
+export class LoginAlphaScreenComponentModule extends ModuleWithConfig{
   static withConfig = LoginAlphaScreenComponentModule.factory<LoginAlphaConfig>()
 }
 

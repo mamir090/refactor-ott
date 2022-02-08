@@ -20,7 +20,9 @@
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
     "@nrwl/angular": "13.7.1",
+    "ng-select2-component": "^8.0.6",
     "rxjs": "~7.4.0",
+    "tastewise-ng2-select2": "^9.0.2",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.4"
   },

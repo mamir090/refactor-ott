@@ -4,9 +4,8 @@
     "aptn": "apps/aptn",
     "aptn-e2e": "apps/aptn-e2e",
     "config-app-router": "libs/config/app-router",
-    "env": "libs/env",
-    "loader": "libs/loader",
     "screens-login-login-alpha": "libs/screens/login/login-alpha",
-    "shell": "libs/shell"
+    "shell": "libs/shell",
+    "ui-header": "libs/ui/header"
   }
 }
