@@ -1,0 +1,12 @@
+{
+  "root": "libs/config/styles",
+  "sourceRoot": "libs/config/styles/src",
+  "projectType": "library",
+  "generators": {},
+  "targets": {},
+  "tags": [],
+  "exports": {
+    "./": "./src/"
+  }
+}
+
