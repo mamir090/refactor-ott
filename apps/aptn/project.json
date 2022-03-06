@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/aptn",
         "index": "apps/aptn/src/index.html",
@@ -14,8 +16,13 @@
         "polyfills": "apps/aptn/src/polyfills.ts",
         "tsConfig": "apps/aptn/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/aptn/src/favicon.ico", "apps/aptn/src/assets"],
-        "styles": ["apps/aptn/src/styles.scss"],
+        "assets": [
+          "apps/aptn/src/favicon.ico",
+          "apps/aptn/src/assets"
+        ],
+        "styles": [
+          "apps/aptn/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -72,12 +79,17 @@
     "lint": {
       "executor": "@nrwl/linter:eslint",
       "options": {
-        "lintFilePatterns": ["apps/aptn/src/**/*.ts", "apps/aptn/src/**/*.html"]
+        "lintFilePatterns": [
+          "apps/aptn/src/**/*.ts",
+          "apps/aptn/src/**/*.html"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/aptn"],
+      "outputs": [
+        "coverage/apps/aptn"
+      ],
       "options": {
         "jestConfig": "apps/aptn/jest.config.js",
         "passWithNoTests": true

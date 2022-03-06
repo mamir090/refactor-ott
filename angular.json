@@ -4,6 +4,7 @@
     "aptn": "apps/aptn",
     "aptn-e2e": "apps/aptn-e2e",
     "config-app-router": "libs/config/app-router",
+    "config-styles": "libs/config/styles",
     "screens-login-login-alpha": "libs/screens/login/login-alpha",
     "shell": "libs/shell",
     "ui-header": "libs/ui/header"

@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
-      "outputs": ["dist/libs/screens/login/login-alpha"],
+      "outputs": [
+        "dist/libs/screens/login/login-alpha"
+      ],
       "options": {
         "project": "libs/screens/login/login-alpha/ng-package.json",
         "tailwindConfig": "libs/screens/login/login-alpha/tailwind.config.js"
@@ -23,7 +25,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/screens/login/login-alpha"],
+      "outputs": [
+        "coverage/libs/screens/login/login-alpha"
+      ],
       "options": {
         "jestConfig": "libs/screens/login/login-alpha/jest.config.js",
         "passWithNoTests": true

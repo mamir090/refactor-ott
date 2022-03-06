@@ -18,6 +18,7 @@
       "@refactor-ott/config/app-router": [
         "libs/config/app-router/src/index.ts"
       ],
+      "@refactor-ott/config/styles": ["libs/config/styles/src/index.ts"],
       "@refactor-ott/environment": ["libs/environment/src/index.ts"],
       "@refactor-ott/screens/login/login-alpha": [
         "libs/screens/login/login-alpha/src/index.ts"

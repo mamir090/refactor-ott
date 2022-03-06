@@ -6,9 +6,12 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
-      "outputs": ["dist/libs/ui/header"],
+      "outputs": [
+        "dist/libs/ui/header"
+      ],
       "options": {
-        "project": "libs/ui/header/ng-package.json"
+        "project": "libs/ui/header/ng-package.json",
+        "tailwindConfig": "libs/ui/header/tailwind.config.js"
       },
       "configurations": {
         "production": {
@@ -22,7 +25,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/ui/header"],
+      "outputs": [
+        "coverage/libs/ui/header"
+      ],
       "options": {
         "jestConfig": "libs/ui/header/jest.config.js",
         "passWithNoTests": true

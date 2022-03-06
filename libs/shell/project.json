@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@nrwl/angular:ng-packagr-lite",
-      "outputs": ["dist/libs/shell"],
+      "outputs": [
+        "dist/libs/shell"
+      ],
       "options": {
         "project": "libs/shell/ng-package.json"
       },
@@ -22,7 +24,9 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/shell"],
+      "outputs": [
+        "coverage/libs/shell"
+      ],
       "options": {
         "jestConfig": "libs/shell/jest.config.js",
         "passWithNoTests": true
