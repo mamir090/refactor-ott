@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ShellConfig } from './shell-config';
 
 @Component({
   selector: 'refactor-ott-shell',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShellComponent implements OnInit {
 
-  constructor() { }
+  constructor(public shellConfig: ShellConfig) { }
 
   ngOnInit(): void {
   }

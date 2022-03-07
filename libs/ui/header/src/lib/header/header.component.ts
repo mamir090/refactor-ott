@@ -1,5 +1,8 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import {Component, OnInit, NgModule, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {HeaderConfig} from "./header-config";
+
+
 
 @Component({
   selector: 'refactor-ott-header',
@@ -7,6 +10,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+
+  @Input() config = new HeaderConfig()
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -17,4 +23,4 @@ export class HeaderComponent implements OnInit {
   declarations: [HeaderComponent],
   exports: [HeaderComponent],
 })
-export class HeaderComponentModule {}
+export class HeaderComponentModule{}

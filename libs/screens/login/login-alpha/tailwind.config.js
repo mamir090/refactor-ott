@@ -2,6 +2,9 @@ const { createGlobPatternsForDependencies } = require('@nrwl/angular/tailwind');
 const { join } = require('path');
 
 module.exports = {
+  presets: [
+    require('../../base-tailwind.config')
+  ],
   content: [
     join(__dirname, 'src/**/!(*.stories|*.spec).{ts,html}'),
     ...createGlobPatternsForDependencies(__dirname),
@@ -9,5 +12,4 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
 };

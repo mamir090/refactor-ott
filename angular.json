@@ -7,6 +7,7 @@
     "config-styles": "libs/config/styles",
     "screens-login-login-alpha": "libs/screens/login/login-alpha",
     "shell": "libs/shell",
+    "ui-common": "libs/ui/common",
     "ui-header": "libs/ui/header"
   }
 }

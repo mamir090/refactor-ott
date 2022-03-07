@@ -5,14 +5,19 @@ import {ModuleWithProviders, Type} from "@angular/core";
 export class RoutesGenerator {
   private static _appRoutes: Routes
 
+
+  static generateRouterModulePure(appRoutes: Routes): ModuleWithProviders<RouterModule> {
+    RoutesGenerator._appRoutes = appRoutes
+    return RouterModule.forRoot(appRoutes);
+  }
+
   static generateRouterModule(schema: RoutingSchema): ModuleWithProviders<RouterModule> {
     RoutesGenerator.generateRoutes(schema)
     return RouterModule.forRoot(RoutesGenerator.appRoutes)
   }
 
   private static generateRoutes(schema: RoutingSchema) {
-    console.warn("generateRoutes")
-    const mergedSchema = {...routingSchema, ...schema}
+    const mergedSchema = { ...schema}
     this._appRoutes = Object.entries(mergedSchema).map(([key, value]) => {
       return {
         path: key,
@@ -27,14 +32,9 @@ export class RoutesGenerator {
 }
 
 
-const routingSchema: RoutingSchema = {
-  // login: {
-  //   module: import("@refactor-ott/screens/login/login-alpha").then(m => m.LoginAlphaScreenComponentModule),
-  // }
-}
 
 export interface RoutingSchema {
-  login?: LazyLoadedModule,
+  login: LazyLoadedModule,
 }
 
 export type LazyLoadedModule = {module:  Type<unknown> | Promise<Type<unknown> | unknown>}

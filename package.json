@@ -19,12 +19,14 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@ngx-formly/core": "^5.10.33",
     "@nrwl/angular": "13.8.4",
     "esm": "^3.2.25",
     "ng-select2-component": "^8.0.6",
     "rxjs": "~7.4.0",
     "tastewise-ng2-select2": "^9.0.2",
     "tslib": "^2.0.0",
+    "tw-elements": "^1.0.0-alpha11",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "@nrwl/nx-cloud": "latest",
     "@nrwl/tao": "13.8.4",
     "@nrwl/workspace": "13.8.4",
+    "@tailwindcss/forms": "^0.5.0",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "~5.10.0",

@@ -24,6 +24,7 @@
         "libs/screens/login/login-alpha/src/index.ts"
       ],
       "@refactor-ott/shell": ["libs/shell/src/index.ts"],
+      "@refactor-ott/ui/common": ["libs/ui/common/src/index.ts"],
       "@refactor-ott/ui/header": ["libs/ui/header/src/index.ts"]
     }
   },
