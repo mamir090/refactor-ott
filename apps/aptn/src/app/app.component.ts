@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Translations} from "./local/def";
 
 
 @Component({
@@ -8,4 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'aptn';
+  constructor(public t: Translations) {
+    console.warn(t)
+  }
 }

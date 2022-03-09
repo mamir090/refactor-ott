@@ -1,3 +1,11 @@
+<ng-container *transloco="let t; let c= currentLang">
+  <p>{{ t('hello') }}</p>
+</ng-container>
+
+<ng-container *transType="let t; let k= tk">
+  <p>{{ t(k.below) }}</p>
+</ng-container>
+
 <form [formGroup]="form" (ngSubmit)="onSubmit(model)">
   <formly-form [form]="form" [fields]="fields" [model]="model"></formly-form>
   <button type="submit" class="btn btn-default">Submit</button>

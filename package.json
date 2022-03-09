@@ -19,6 +19,7 @@
     "@angular/platform-browser": "~13.2.0",
     "@angular/platform-browser-dynamic": "~13.2.0",
     "@angular/router": "~13.2.0",
+    "@ngneat/transloco": "^3.1.4",
     "@ngx-formly/core": "^5.10.33",
     "@nrwl/angular": "13.8.4",
     "esm": "^3.2.25",

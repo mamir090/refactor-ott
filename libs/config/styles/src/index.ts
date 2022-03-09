@@ -1,6 +1,2 @@
-// @ts-ignore
-import * as TailwindConfig from './base-tailwind.config'
 
-export default {
-  ...TailwindConfig
-}
+export * from './local/translate-ott/translate-ott.module'

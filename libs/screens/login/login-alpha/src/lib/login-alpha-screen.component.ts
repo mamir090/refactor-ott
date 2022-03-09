@@ -9,6 +9,9 @@ import {LoginAlphaConfig} from "./config";
 import {ModuleWithConfig} from "@refactor-ott/config/app-router";
 import {FormGroup, ReactiveFormsModule} from "@angular/forms";
 import {FormlyFieldConfig, FormlyModule} from "@ngx-formly/core";
+import {TranslocoModule} from "@ngneat/transloco";
+import {TranslateOttModule} from "@refactor-ott/config/styles";
+
 
 
 
@@ -48,7 +51,10 @@ export class LoginAlphaScreenComponent implements OnInit {
   ngOnInit(): void {
     console.warn(this.config)
   }
+
 }
+
+
 
 @NgModule({
   imports: [
@@ -58,7 +64,9 @@ export class LoginAlphaScreenComponent implements OnInit {
       component: LoginAlphaScreenComponent
     }]),
     ReactiveFormsModule,
-    FormlyModule
+    FormlyModule,
+    TranslocoModule,
+    TranslateOttModule
   ],
   declarations: [LoginAlphaScreenComponent],
   providers: [{

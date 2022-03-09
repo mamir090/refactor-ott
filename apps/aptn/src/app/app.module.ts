@@ -12,6 +12,8 @@ import {UiCommonModule} from "@refactor-ott/ui/common";
 import {InputWrapperComponent} from "../../../../libs/ui/common/src/lib/input-wrapper/input-wrapper.component";
 import {CheckboxWrapperComponent} from "../../../../libs/ui/common/src/lib/checkbox-wrapper/checkbox-wrapper.component";
 import {CheckboxComponent} from "../../../../libs/ui/common/src/lib/checkbox/checkbox.component";
+import { HttpClientModule } from '@angular/common/http';
+import { TranslocoRootModule } from './transloco-root.module';
 
 
 
@@ -40,6 +42,8 @@ import {CheckboxComponent} from "../../../../libs/ui/common/src/lib/checkbox/che
         showSignUp: false
       }
     }),
+    HttpClientModule,
+    TranslocoRootModule,
   ],
   bootstrap: [AppComponent],
 })
